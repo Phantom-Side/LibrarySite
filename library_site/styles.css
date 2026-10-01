@@ -7,6 +7,12 @@
     box-sizing: border-box;
 }
 
+html {
+    /* Базовый размер шрифта плавно растёт между 320px (телефон) и 2560px (широкий монитор/4K),
+       вместо того чтобы скачками меняться только в media-запросах */
+    font-size: clamp(15px, 0.9vw + 12px, 19px);
+}
+
 body {
     margin: 0;
     font-family: "Segoe UI", Arial, sans-serif;
@@ -228,6 +234,23 @@ footer {
     padding: 16px;
     color: #6b7280;
     font-size: 0.85rem;
+}
+
+/* ===== Адаптив под широкие мониторы и 4K ===== */
+@media (min-width: 1600px) {
+    main,
+    .page-title,
+    .intro,
+    .contacts,
+    table,
+    .catalog-section,
+    .service-list {
+        max-width: 1200px; /* чуть шире контейнер, но не на всю ширину экрана */
+    }
+
+    .book-card {
+        max-width: 280px; /* карточки книг чуть крупнее, раз места больше */
+    }
 }
 
 /* ===== Адаптив под мобильные ===== */
