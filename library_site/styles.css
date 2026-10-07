@@ -24,10 +24,46 @@ body {
 /* ===== Навигация ===== */
 nav {
     display: flex;
+    align-items: center;
+    justify-content: center; /* на десктопе кнопка-бургер скрыта, и меню теперь центрируется, а не липнет влево */
+    position: relative;
+    background-color: #1f2937;
+    padding: 8px 20px;
+}
+
+/* Бургер-кнопка отдельно прижата вправо (видна только на мобильных) */
+.nav-toggle {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.nav-links {
+    display: flex;
     flex-wrap: wrap;
     gap: 4px;
-    background-color: #1f2937;
-    padding: 12px 20px;
+}
+
+/* Кнопка-"бутерброд", на десктопе скрыта */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
 }
 
 nav a {
@@ -47,6 +83,12 @@ nav a:visited {
     color: #ffffff;
 }
 
+/* Состояние в момент нажатия (псевдокласс :active) — отличается от hover */
+nav a:active {
+    background-color: #111827;
+}
+
+/* .active — не псевдокласс, а JS-класс для подсветки текущей страницы в меню */
 nav a.active {
     background-color: #f5b400;
     color: #1f2937;
@@ -57,6 +99,7 @@ nav a.active {
 header.site-header {
     display: flex;
     align-items: center;
+    justify-content: center; /* группа логотип+текст теперь центрируется, а не прилипает к левому краю на широких экранах */
     gap: 16px;
     padding: 20px;
     background-color: #ffffff;
@@ -135,6 +178,17 @@ h1, h2, h3 {
 .book-card {
     flex: 1 1 220px;
     max-width: 240px;
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.book-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
 }
 
 .book-card img {
@@ -236,6 +290,132 @@ footer {
     font-size: 0.85rem;
 }
 
+/* ===== Главная страница: hero-блок ===== */
+.hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 20px 32px;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin: 0 0 14px;
+}
+
+.hero p {
+    color: #4b5563;
+    max-width: 620px;
+    margin: 0 auto 26px;
+    font-size: 1.05rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 26px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #f5b400;
+    color: #1f2937;
+}
+
+.btn-primary:hover,
+.btn-primary:visited:hover {
+    background-color: #d99e00;
+}
+
+.btn-secondary {
+    background-color: #1f2937;
+    color: #ffffff;
+}
+
+.btn-secondary:hover,
+.btn-secondary:visited:hover {
+    background-color: #374151;
+}
+
+/* Это не элементы навигации, поэтому обычное и посещённое состояние
+   намеренно немного отличаются оттенком (требование лаб. №2) */
+.btn-primary:visited {
+    background-color: #c98f00;
+    color: #1f2937;
+}
+
+.btn-secondary:visited {
+    background-color: #111827;
+    color: #ffffff;
+}
+
+.btn-primary:active {
+    background-color: #a87600;
+}
+
+.btn-secondary:active {
+    background-color: #0b1220;
+}
+
+/* ===== Главная страница: цифры о библиотеке ===== */
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 36px;
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.stat-item {
+    text-align: center;
+    min-width: 120px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1f2937;
+}
+
+.stat-label {
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+/* ===== Главная страница: преимущества ===== */
+.feature-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.feature-item {
+    flex: 1 1 220px;
+}
+
+.feature-item h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+}
+
+.feature-item p {
+    margin: 0;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
 /* ===== Адаптив под широкие мониторы и 4K ===== */
 @media (min-width: 1600px) {
     main,
@@ -261,14 +441,60 @@ footer {
     }
 
     nav {
-        justify-content: center;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    /* Бургер-меню вместо горизонтального списка ссылок */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        padding-top: 8px;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        width: 100%;
+        padding: 12px 14px;
     }
 
     table, th, td {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    /* Каталог: карточки растягиваются на всю ширину экрана вместо того,
+       чтобы оставаться маленькими с пустым полем по бокам */
+    .catalog-section {
+        padding: 14px;
     }
 
     .book-grid {
         justify-content: center;
+    }
+
+    .book-card {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    .book-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .book-card .book-author {
+        font-size: 1rem;
+    }
+
+    .book-card p.book-desc {
+        font-size: 1rem;
     }
 }

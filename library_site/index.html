@@ -8,11 +8,16 @@
 </head>
 <body>
     <nav>
-        <a href="index.html">Главная</a>
-        <a href="about.html">О библиотеке</a>
-        <a href="catalog.html">Каталог книг</a>
-        <a href="price.html">Тарифы и услуги</a>
-        <a href="service.html">Сервисы читателям</a>
+        <button class="nav-toggle" aria-label="Открыть меню" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="about.html">О библиотеке</a>
+            <a href="catalog.html">Каталог книг</a>
+            <a href="price.html">Тарифы и услуги</a>
+            <a href="service.html">Сервисы читателям</a>
+        </div>
     </nav>
 
     <header class="site-header">
@@ -24,13 +29,80 @@
     </header>
 
     <main>
-        <p class="intro">Librarium — это онлайн-библиотека и одновременно читальный зал в вашем городе. Более 40 000 книг в электронном и бумажном виде: художественная литература, научно-популярные издания, аудиокниги и учебная литература для всех возрастов.</p>
-        <p class="intro">Читайте онлайн с любого устройства, бронируйте бумажные издания на выдачу или приходите в читальный зал — консультация библиотекаря и Wi-Fi всегда бесплатны. Работаем с 2015 года.</p>
+        <section class="hero">
+            <h2>Читайте без границ — онлайн и в читальном зале</h2>
+            <p>Более 40 000 книг: художественная литература, научпоп, аудиокниги и учебная литература. Запишитесь за 2 минуты и получите доступ уже сегодня.</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary" href="catalog.html">Открыть каталог</a>
+                <a class="btn btn-secondary" href="service.html">Как записаться</a>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-item">
+                <span class="stat-number">40 000+</span>
+                <span class="stat-label">книг в фонде</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">25 000+</span>
+                <span class="stat-label">читателей</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">10 лет</span>
+                <span class="stat-label">работы библиотеки</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">доступ к каталогу онлайн</span>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <h2>Новинки и популярное</h2>
+            <div class="book-grid">
+                <article class="book-card">
+                    <img src="images/book-fiction.png" alt="Обложка романа «Дальний берег»" width="240" height="320">
+                    <h3>«Дальний берег»</h3>
+                    <p class="book-author">А. Морозов</p>
+                    <p class="book-desc">История путешествия, которое меняет представление героя о доме.</p>
+                </article>
+                <article class="book-card">
+                    <img src="images/book-scifi.png" alt="Обложка романа «Станция Аврора»" width="240" height="320">
+                    <h3>«Станция Аврора»</h3>
+                    <p class="book-author">Н. Кораблёв</p>
+                    <p class="book-desc">Экипаж исследовательской станции сталкивается с сигналом из глубокого космоса.</p>
+                </article>
+                <article class="book-card">
+                    <img src="images/book-detective.png" alt="Обложка романа «Дело о пропавшем архиве»" width="240" height="320">
+                    <h3>«Дело о пропавшем архиве»</h3>
+                    <p class="book-author">М. Раевская</p>
+                    <p class="book-desc">Расследование в маленьком городе, где у каждого есть тайна.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="catalog-section">
+            <h2>Почему Librarium</h2>
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>Бесплатный абонемент</h3>
+                    <p>Регистрация и выдача книг на дом — без абонентской платы.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Доступ 24/7</h3>
+                    <p>Электронный каталог и аудиокниги доступны круглосуточно с любого устройства.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Консультация библиотекаря</h3>
+                    <p>Поможем подобрать книгу под настроение, возраст или учебную программу.</p>
+                </div>
+            </div>
+        </section>
 
         <section class="map-wrapper">
             <h2>Как нас найти</h2>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d844.5660361764434!2d34.318915790345244!3d53.22155108160825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x412d59a53925e9b9%3A0x9a2ee2d2d8e9af2!2sOCEAN%20PLAZA!5e0!3m2!1sru!2sru!4v1789584685816!5m2!1sru!2sru"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                width="600" height="450" allowfullscreen="" loading="lazy"
                 referrerpolicy="strict-origin-when-cross-origin" title="Карта расположения библиотеки Librarium"></iframe>
         </section>
     </main>
