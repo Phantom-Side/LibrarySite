@@ -26,63 +26,56 @@
     </header>
 
     <main>
-        <table>
-            <caption>Стоимость услуг библиотеки</caption>
-            <thead>
-                <tr>
-                    <th scope="col">Услуга</th>
-                    <th scope="col">Категория</th>
-                    <th scope="col">Стоимость</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="free">
-                    <th scope="row">Регистрация читательского билета</th>
-                    <td>Абонемент</td>
-                    <td>Бесплатно</td>
-                </tr>
-                <tr class="free">
-                    <th scope="row">Выдача книг на дом (до 5 экз.)</th>
-                    <td>Абонемент</td>
-                    <td>Бесплатно</td>
-                </tr>
-                <tr class="free">
-                    <th scope="row">Доступ к электронному каталогу</th>
-                    <td>Электронный читальный зал</td>
-                    <td>Бесплатно</td>
-                </tr>
-                <tr class="paid">
-                    <th scope="row">Скачивание аудиокниги (1 экз.)</th>
-                    <td>Электронный читальный зал</td>
-                    <td>99 ₽</td>
-                </tr>
-                <tr class="paid">
-                    <th scope="row">Печать документа (1 лист, ч/б)</th>
-                    <td>Копи-центр</td>
-                    <td>5 ₽</td>
-                </tr>
-                <tr class="paid">
-                    <th scope="row">Ксерокопия (1 лист)</th>
-                    <td>Копи-центр</td>
-                    <td>4 ₽</td>
-                </tr>
-                <tr class="paid">
-                    <th scope="row">Межбиблиотечный абонемент (заказ издания)</th>
-                    <td>Дополнительные услуги</td>
-                    <td>150 ₽</td>
-                </tr>
-                <tr class="fine">
-                    <th scope="row">Просрочка возврата книги (за сутки)</th>
-                    <td>Штраф</td>
-                    <td>10 ₽</td>
-                </tr>
-                <tr class="fine">
-                    <th scope="row">Утеря или порча издания</th>
-                    <td>Штраф</td>
-                    <td>Стоимость книги</td>
-                </tr>
-            </tbody>
-        </table>
+        <section class="pricing-list" aria-labelledby="pricing-heading">
+            <h2 id="pricing-heading">Стоимость услуг библиотеки</h2>
+            <div class="pricing-grid">
+                <article class="pricing-card free">
+                    <h3>Регистрация читательского билета</h3>
+                    <p class="pricing-category">Абонемент</p>
+                    <p class="pricing-amount">Бесплатно</p>
+                </article>
+                <article class="pricing-card free">
+                    <h3>Выдача книг на дом (до 5 экз.)</h3>
+                    <p class="pricing-category">Абонемент</p>
+                    <p class="pricing-amount">Бесплатно</p>
+                </article>
+                <article class="pricing-card free">
+                    <h3>Доступ к электронному каталогу</h3>
+                    <p class="pricing-category">Электронный читальный зал</p>
+                    <p class="pricing-amount">Бесплатно</p>
+                </article>
+                <article class="pricing-card paid">
+                    <h3>Скачивание аудиокниги (1 экз.)</h3>
+                    <p class="pricing-category">Электронный читальный зал</p>
+                    <p class="pricing-amount">99 ₽</p>
+                </article>
+                <article class="pricing-card paid">
+                    <h3>Печать документа (1 лист, ч/б)</h3>
+                    <p class="pricing-category">Копи-центр</p>
+                    <p class="pricing-amount">5 ₽</p>
+                </article>
+                <article class="pricing-card paid">
+                    <h3>Ксерокопия (1 лист)</h3>
+                    <p class="pricing-category">Копи-центр</p>
+                    <p class="pricing-amount">4 ₽</p>
+                </article>
+                <article class="pricing-card paid">
+                    <h3>Межбиблиотечный абонемент (заказ издания)</h3>
+                    <p class="pricing-category">Дополнительные услуги</p>
+                    <p class="pricing-amount">150 ₽</p>
+                </article>
+                <article class="pricing-card fine">
+                    <h3>Просрочка возврата книги (за сутки)</h3>
+                    <p class="pricing-category">Штраф</p>
+                    <p class="pricing-amount">10 ₽</p>
+                </article>
+                <article class="pricing-card fine">
+                    <h3>Утеря или порча издания</h3>
+                    <p class="pricing-category">Штраф</p>
+                    <p class="pricing-amount">Стоимость книги</p>
+                </article>
+            </div>
+        </section>
     </main>
 
     <footer>&copy; 2026 Librarium — онлайн-библиотека</footer>
